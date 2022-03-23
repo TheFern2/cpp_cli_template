@@ -4,6 +4,7 @@
 #include <atomic>
 #include "spdlog/spdlog.h"
 #include "Config.h"
+#include "Log.h"
 
 namespace config
 {
@@ -27,7 +28,7 @@ bool config::load_config(std::string filename)
         return true;
     }
     else {
-        spdlog::error("Configuration file not found");
+        LOG_ERROR("Configuration file not found");
         return false;
     }
 }
